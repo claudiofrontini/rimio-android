@@ -1,0 +1,91 @@
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Informativa privacy RIMIO</title><style>body{font-family:system-ui,-apple-system,sans-serif;max-width:880px;margin:40px auto;padding:0 20px;line-height:1.55;color:#171717}h1,h2{line-height:1.2}li{margin:.25rem 0}.notice{padding:12px 16px;background:#fff7d6;border:1px solid #d7b84b;border-radius:8px}</style></head><body>
+<h1>Informativa privacy RIMIO — baseline tecnica 0.50</h1>
+<p class="notice">**Da completare prima della pubblicazione.** Inserire i dati reali del titolare, i contatti privacy, le basi giuridiche applicabili e l&#x27;URL pubblico definitivo. Il testo descrive il comportamento tecnico della build Android 0.50 e non sostituisce la validazione legale/GDPR del prodotto commercializzato.</p>
+<h2>1. Titolare del trattamento</h2>
+<ul>
+<li>Titolare / ragione sociale: **[DA COMPLETARE]**</li>
+<li>Sede: **[DA COMPLETARE]**</li>
+<li>Email privacy: **[DA COMPLETARE]**</li>
+<li>DPO, se nominato: **[DA COMPLETARE / NON APPLICABILE]**</li>
+</ul>
+<h2>2. Che cos&#x27;è RIMIO</h2>
+<p>RIMIO è un&#x27;app di organizzazione personale che consente di archiviare documenti, estrarre localmente informazioni tramite OCR, gestire scadenze/promemoria/appuntamenti, liste, tessere, parcheggio, procedure personali e confrontare alcune offerte pubbliche.</p>
+<p>La build Android non richiede un account RIMIO e non usa un backend RIMIO per sincronizzare automaticamente i dati personali dell&#x27;utente.</p>
+<h2>3. Dati trattati sul dispositivo</h2>
+<p>In base alle funzioni scelte dall&#x27;utente RIMIO può trattare localmente:</p>
+<ul>
+<li>fotografie, PDF e documenti importati volontariamente;</li>
+<li>campi estratti da bollette, documenti auto, assicurazioni, pagamenti, ricevute, contratti e altri documenti;</li>
+<li>documenti sanitari/referti e relativi campi strutturati;</li>
+<li>promemoria personali, appuntamenti e scadenze;</li>
+<li>contatti utili inseriti dall&#x27;utente;</li>
+<li>tessere fedeltà, immagini e codici/barcode;</li>
+<li>foto-prova e dati di Vita quotidiana;</li>
+<li>posizione corrente per parcheggio e ricerca negozi e, solo nella variante Full quando attivato volontariamente, geofence di prossimità;</li>
+<li>voce/dettatura avviata esplicitamente dall&#x27;utente;</li>
+<li>dati necessari al backup manuale cifrato.</li>
+</ul>
+<h2>4. Elaborazione locale, minimizzazione e cifratura</h2>
+<p>OCR, classificazione documentale, confronto documenti, spiegazione semplice dei referti e generazione delle bozze di messaggio sono progettati per funzionare localmente sul dispositivo.</p>
+<p>RIMIO applica una policy di minimizzazione ai campi documentali prima della persistenza. Il testo OCR completo non viene conservato per impostazione predefinita. Gli originali documentali, i campi sensibili e i principali dati locali di promemoria/Vita quotidiana/parcheggio/negozi salvati sono protetti nello storage privato dell&#x27;app e cifrati a livello applicativo con AES-GCM e chiavi protette da Android Keystore dove previsto dalla relativa struttura dati. Le coordinate persistite di parcheggio e negozi vengono conservate in forma cifrata dopo la migrazione v14.</p>
+<p>La protezione biometrica/credenziale del dispositivo è opzionale e può essere attivata dall&#x27;utente.</p>
+<h2>5. Documenti sanitari</h2>
+<p>I referti e gli altri documenti sanitari caricati volontariamente restano nello storage privato di RIMIO. La funzione &quot;Spiegazione semplice&quot; utilizza un glossario deterministico locale e i dati disponibili nel documento.</p>
+<p>**RIMIO non è un dispositivo medico e non diagnostica, tratta, cura o previene condizioni mediche.** Le spiegazioni non sostituiscono il documento originale né il professionista sanitario. Per consigli, diagnosi o trattamenti l&#x27;utente deve rivolgersi a un professionista sanitario.</p>
+<p>RIMIO non invia automaticamente i referti a servizi AI/cloud esterni.</p>
+<h2>6. Posizione</h2>
+<p>La posizione può essere usata, previa autorizzazione Android, per:</p>
+<ul>
+<li>memorizzare il parcheggio;</li>
+<li>cercare negozi entro il raggio richiesto;</li>
+<li>nella variante Full, generare avvisi di prossimità per negozi salvati solo se l&#x27;utente li attiva volontariamente.</li>
+</ul>
+<p>La variante destinata a Google Play non dichiara la posizione in background e non registra geofence in background.</p>
+<p>RIMIO non mantiene una cronologia degli spostamenti. La ricerca negozi usa prima un catalogo POI offline/versionato incorporato nella release. Il catalogo nazionale viene generato in fase di release da dati OpenStreetMap/Geofabrik e non richiede chiamate runtime a Overpass o Google Places. Il Geocoder del dispositivo può essere usato soltanto come fallback. La disponibilità del Geocoder e l&#x27;eventuale trattamento remoto dipendono dal provider Android configurato sul dispositivo.</p>
+<h2>7. Voce e riconoscimento vocale</h2>
+<p>La dettatura viene avviata soltanto su azione dell&#x27;utente tramite le API Android di riconoscimento vocale. A seconda del dispositivo e delle impostazioni, il riconoscimento può essere on-device oppure affidato al provider di riconoscimento configurato dall&#x27;utente. RIMIO non conserva autonomamente registrazioni audio.</p>
+<h2>8. Calendario e notifiche</h2>
+<p>Con autorizzazione esplicita RIMIO può creare, aggiornare o eliminare appuntamenti nel Calendario Android selezionato dall&#x27;utente. L&#x27;eventuale sincronizzazione cloud del calendario dipende dal provider/account scelto dall&#x27;utente.</p>
+<p>Promemoria e notifiche RIMIO sono gestiti localmente. I contenuti sensibili delle notifiche sono configurati per ridurre l&#x27;esposizione sulla schermata di blocco.</p>
+<h2>9. Internet e servizi esterni</h2>
+<p>RIMIO usa Internet soltanto per funzioni specifiche:</p>
+<ul>
+<li>download del catalogo pubblico Open Data del Portale Offerte ARERA / Acquirente Unico per il comparatore energia;</li>
+<li>download, su azione dell&#x27;utente, di un manuale PDF HTTPS scelto nella funzione &quot;Crea da manuale&quot;;</li>
+<li>apertura esplicita di AGCOM, Preventivass, siti di fornitori o altri siti esterni;</li>
+<li>eventuale uso di servizi/provider Android necessari a funzioni di sistema, come Geocoder o riconoscimento vocale.</li>
+</ul>
+<p>RIMIO non include automaticamente documenti archiviati, OCR, POD/PDR, referti o campi strutturati nelle richieste ai servizi esterni. Prima di alcune aperture verso siti esterni viene mostrata un&#x27;informativa di confine privacy.</p>
+<p>I siti/provider esterni possono ricevere i normali dati tecnici di connessione e applicano le proprie informative privacy.</p>
+<h2>10. Backup manuale cifrato</h2>
+<p>RIMIO non esegue backup cloud automatici dei propri dati. L&#x27;utente può creare manualmente un file `.rimio` cifrato con password e scegliere la destinazione mediante il selettore documenti Android. RIMIO non conserva la password del backup.</p>
+<p>Se l&#x27;utente sceglie volontariamente un provider cloud o un&#x27;app di terze parti come destinazione, tale provider riceve il file cifrato in conseguenza dell&#x27;azione dell&#x27;utente.</p>
+<p>Il ripristino non riattiva automaticamente permessi Android, geofence o vecchi collegamenti Calendar.</p>
+<h2>11. Conservazione e cancellazione</h2>
+<ul>
+<li>Originali documentali: per impostazione predefinita non vengono eliminati automaticamente; l&#x27;utente può scegliere una retention di 12 o 24 mesi dalla data di salvataggio RIMIO.</li>
+<li>Testo OCR completo: non conservato per impostazione predefinita; può essere mantenuto solo se l&#x27;utente abilita la relativa opzione.</li>
+<li>Cache temporanee: gestite nel ciclo di vita dell&#x27;app e rimosse dal reset; i PDF dei manuali vengono eliminati dopo l&#x27;analisi o l&#x27;errore.</li>
+<li>Posizione: non viene conservata come cronologia degli spostamenti.</li>
+<li>Dati RIMIO: l&#x27;utente può eliminare singoli elementi o utilizzare &quot;Elimina tutti i dati&quot;.</li>
+</ul>
+<h2>12. Condivisioni avviate dall&#x27;utente</h2>
+<p>Quando l&#x27;utente sceglie Email, SMS, Condividi, Maps, browser o un provider di documenti, RIMIO apre l&#x27;app esterna soltanto dopo un&#x27;azione esplicita. L&#x27;utente controlla il contenuto e l&#x27;invio finale. Da quel momento si applica anche l&#x27;informativa del servizio scelto.</p>
+<h2>13. Analytics, pubblicità e profilazione</h2>
+<p>La baseline 0.50 non integra analytics cloud, crash reporting cloud o SDK pubblicitari RIMIO e non crea profili pubblicitari utilizzando i dati archiviati.</p>
+<h2>14. Permessi Android</h2>
+<p>I permessi sono richiesti in relazione alle funzioni utilizzate, tra cui notifiche, biometria, microfono, calendario e posizione. Camera, microfono e GPS sono dichiarati come hardware opzionale per evitare l&#x27;esclusione di dispositivi che possono usare il resto dell&#x27;app.</p>
+<h2>15. Diritti dell&#x27;interessato</h2>
+<p>**[COMPLETARE IN BASE AL TITOLARE E ALLA DISTRIBUZIONE]**: indicare i diritti applicabili, il canale di esercizio, i tempi di risposta e l&#x27;autorità di controllo competente.</p>
+<h2>16. Base giuridica e categorie particolari</h2>
+<p>**[DA VALIDARE LEGALMENTE]**: indicare le basi giuridiche applicabili alle funzionalità del servizio e, per eventuali dati sanitari/categorie particolari, la condizione pertinente ai sensi dell&#x27;art. 9 GDPR.</p>
+<h2>17. Trasferimenti internazionali e fornitori</h2>
+<p>**[DA COMPLETARE DOPO LA MAPPATURA FINALE DEI PROVIDER]**. Il comportamento di servizi di sistema/terzi può dipendere dal dispositivo, dall&#x27;account e dalle impostazioni dell&#x27;utente.</p>
+<h2>18. Versione e pubblicazione</h2>
+<ul>
+<li>Baseline tecnica: **Android 0.50**</li>
+<li>Data revisione tecnica: **4 ottobre 2026**</li>
+<li>URL pubblico Google Play: **[DA PUBBLICARE SU URL HTTPS ATTIVO, PUBBLICO, NON PDF]**</li>
+</ul>
+<p>La versione pubblicata deve essere coerente con la sezione Data Safety e con la dichiarazione Health Apps effettivamente inviate in Play Console.</p>
+</body></html>
